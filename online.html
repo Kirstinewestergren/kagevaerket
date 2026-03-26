@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="da">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Online bestilling - Kageværket</title>
+    <link rel="stylesheet" href="kage-style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <!-- TOP-BAR -->
+    <div class="top-bar">
+      Kageværket - Flormelisgade 7, 1150 Kbh K | info@kagevaerket.dk | +45 28 33
+      44 55
+    </div>
+
+    <!-- HEADER -->
+    <header class="site-header">
+      <div class="logo">
+        <a href="index.html"><img src="img/kage-logo.png" alt="logo" /></a>
+      </div>
+
+      <nav class="topnav" id="myTopnav">
+        <a href="index.html">Hjem</a>
+        <a href="online.html" class="active">Online Bestilling</a>
+        <a href="open.html">Åbningstider</a>
+        <a href="contact.html">Kontakt</a>
+
+        <div class="dropdown">
+          <button class="dropdown-btn">
+            Produkter <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content">
+            <a href="#">Bryllup</a>
+            <a href="#">Firma arrangement</a>
+            <a href="#">Fødselsdag</a>
+            <a href="#">Skræddersyet kage</a>
+            <a href="#">Gavekort</a>
+          </div>
+        </div>
+        <span class="icon" onclick="toggleNav()"
+          ><i class="fa fa-bars"></i
+        ></span>
+      </nav>
+    </header>
+
+    <div class="textbox1">
+      <h1>Tradition møder kreativitet i vores bagværk</h1>
+    </div>
+
+    <div class="textbox3 reverse-layout">
+      <div class="textbox3-image">
+        <img src="img/bryllup2.jpg" alt="Kageværkets bagværk" />
+      </div>
+      <div class="textbox3-text">
+        <h1>Bestil din kage online – Nemt og bekvemt</h1>
+        <p>
+          Hos Kageværket gør vi det let for dig at bestille din næste kage
+          hjemmefra. Uanset om det er til en særlig begivenhed eller bare lidt
+          ekstra forkælelse, bager vi hver kage fra bunden med omhu og de bedste
+          råvarer. Bestil online, og lad os stå for resten – altid med samme
+          kærlighed og passion for håndværket..
+        </p>
+      </div>
+    </div>
+
+    <div class="textbox1">
+      <h1>Tradition møder kreativitet i vores bagværk</h1>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <main>
+      <h1>Bestil din kage - Kageværket</h1>
+      <p id="status"></p>
+
+      <h2>Menu</h2>
+      <div id="menu"></div>
+      <p>Vælg dine kager nedenfor:</p>
+
+      <h2>Vælg størrelse</h2>
+      <select id="size">
+        <option value="0">Lille (+0 kr)</option>
+        <option value="20">Mellem (+20 kr)</option>
+        <option value="40">Stor (+40 kr)</option>
+      </select>
+
+      <h2>Tilføj pynt</h2>
+      <label
+        ><input type="checkbox" value="10" /> Chokoladeglasur (+10 kr)</label
+      >
+      <label><input type="checkbox" value="15" /> Frugtpynt (+15 kr)</label>
+      <label><input type="checkbox" value="20" /> Nødder (+20 kr)</label>
+
+      <h2>🛒 Kurv</h2>
+      <ul id="cart"></ul>
+      <p id="total"></p>
+      <button id="saveBtn">Gem bestilling</button>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-content">
+        <div class="footer-section logo">
+          <a href="index.html">
+            <img src="img/kage-logo.png" alt="Kagevaerket Logo" />
+          </a>
+        </div>
+
+        <div class="footer-section adresse">
+          <h3>Beliggenhed</h3>
+          <p>Kageværket</p>
+          <p>Flormelisgade 7</p>
+          <p>1150 København K</p>
+        </div>
+
+        <div class="footer-section contact">
+          <h3>Kontakt</h3>
+          <p>info@kagevaerket.dk</p>
+          <p>+45 28 33 44 55</p>
+        </div>
+
+        <div class="footer-section social">
+          <h3>Følg os her</h3>
+          <a href="#" class="fa fa-facebook"></a>
+          <a href="#" class="fa fa-instagram"></a>
+          <a href="#" class="fa fa-twitter"></a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- COPYRIGHT-BAR UNDER FOOTER -->
+
+    <div class="footer-bar">
+      <p>© 2026 Kageværket. Alle rettigheder forbeholdes.</p>
+    </div>
+
+    <script src="kage.js"></script>
+  </body>
+</html>

@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="da">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Kagevaerket</title>
+    <link rel="stylesheet" href="kage-style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <!-- TOP-BAR -->
+    <div class="top-bar">
+      Kageværket - Flormelisgade 7, 1150 Kbh K | info@kagevaerket.dk | +45 28 33
+      44 55
+    </div>
+
+    <!-- HEADER -->
+    <header class="site-header">
+      <div class="logo">
+        <a href="index.html"><img src="img/kage-logo.png" alt="logo" /></a>
+      </div>
+
+ <nav class="topnav" id="myTopnav">
+        <a href="index.html" >Hjem</a>
+        <a href="online.html">Online Bestilling</a>
+        <a href="open.html">Åbningstider</a>
+        <a href="contact.html"class="active">Kontakt</a>
+
+        <div class="dropdown">
+          <button class="dropdown-btn">
+            Produkter <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content">
+            <a href="#">Bryllup</a>
+            <a href="#">Firma arrangement</a>
+            <a href="#">Fødselsdag</a>
+            <a href="#">Skræddersyet kage</a>
+            <a href="#">Gavekort</a>
+          </div>
+        </div>
+        <span class="icon" onclick="toggleNav()"
+          ><i class="fa fa-bars"></i
+        ></span>
+      </nav>
+    </header>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+    <script>
+      (function () {
+        emailjs.init({
+          publicKey: "PMf8u4RvUNFLCEzrU",
+        });
+      })();
+
+      window.onload = function () {
+        document
+          .getElementById("contact-form")
+          .addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            emailjs.sendForm("service_vj4748i", "template_ec2oifn", this).then(
+              function () {
+                alert("Besked sendt!");
+              },
+              function (error) {
+                alert("Fejl: " + error.text);
+                console.log("FAILED...", error);
+              },
+            );
+          });
+      };
+    </script>
+  </head>
+
+  <body>
+    <form id="contact-form">
+      <input type="hidden" name="time" value="Mar 10 2025 08:46" />
+
+      <label>Navn</label><br />
+      <input type="text" name="name" required /><br /><br />
+
+      <label>Email</label><br />
+      <input type="email" name="email" required /><br /><br />
+
+      <label>Emne</label><br />
+      <input type="text" name="title" required /><br /><br />
+
+      <label>Besked</label><br />
+      <textarea name="message" required></textarea><br /><br />
+
+      <input type="submit" value="Send" />
+    </form>
+
+     <script src="kage.js"></script>
+  </body>
+</html>

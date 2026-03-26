@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="da">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Kagevaerket</title>
+    <link rel="stylesheet" href="kage-style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <!-- TOP-BAR -->
+    <div class="top-bar">
+      Kageværket - Flormelisgade 7, 1150 Kbh K | info@kagevaerket.dk | +45 28 33
+      44 55
+    </div>
+
+    <!-- HEADER -->
+    <header class="site-header">
+      <div class="logo">
+        <a href="index.html"><img src="img/kage-logo.png" alt="logo" /></a>
+      </div>
+
+      <nav class="topnav" id="myTopnav">
+        <a href="index.html" class="active">Hjem</a>
+        <a href="online.html">Online Bestilling</a>
+        <a href="open.html">Åbningstider</a>
+        <a href="contact.html">Kontakt</a>
+
+        <div class="dropdown">
+          <button class="dropdown-btn">
+            Produkter <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content">
+            <a href="#">Bryllup</a>
+            <a href="#">Firma arrangement</a>
+            <a href="#">Fødselsdag</a>
+            <a href="#">Skræddersyet kage</a>
+            <a href="#">Gavekort</a>
+          </div>
+        </div>
+        <span class="icon" onclick="toggleNav()"
+          ><i class="fa fa-bars"></i
+        ></span>
+      </nav>
+    </header>
+
+    <div class="hero-wrapper">
+      <video class="hero-video" autoplay muted loop playsinline>
+        <source src="img/hero-cake.mp4" type="video/mp4" />
+      </video>
+
+      <div class="hero-text">
+        <span class="line">Velkommen til Kageværket</span>
+        <span class="line">Stedet hvor håndværk møder smag</span>
+        <br />
+        <a href="online.html" class="cta-btn">Bestil allerede idag</a>
+      </div>
+    </div>
+
+    <div class="textbox1">
+      <h1>Tradition møder kreativitet i vores bagværk</h1>
+    </div>
+
+    <div class="textbox3">
+      <div class="textbox3-left">
+        <h1>Vi tror på at kvalitet og håndværk går hånd i hånd</h1>
+        <p>
+          Hos Kageværket kombinerer vi traditionelt håndværk med kreative
+          smagsoplevelser. Alt vores bagværk laves fra bunden med kærlighed, og
+          vi går aldrig på kompromis med kvaliteten. Vi bruger kun de bedste
+          råvarer og vores dygtige bagere sørger for, at hver eneste kage er en
+          smagsoplevelse ud over det sædvanlige.
+        </p>
+        <br />
+        <a href="online.html" class="cta-btn">Bestil allerede idag</a>
+      </div>
+
+      <div class="textbox3-right">
+        <img src="img/kage3.jpg" alt="Kageværkets bagværk" />
+      </div>
+    </div>
+
+    <div class="textbox1">
+      <h1>Små detaljer skaber store smagsoplevelser</h1>
+    </div>
+
+    <div class="udvalg"><h1>Kundernes favoritter</h1></div>
+    <div class="udvalg-container">
+      <div class="kasse">
+        <img src="img/kage1.jpg" alt="kage" />
+        <button class="infoButton">Vis info</button>
+        <div class="infoBox">
+          <p>Dette er infoboksen for kage 1.</p>
+        </div>
+      </div>
+
+      <div class="kasse">
+        <img src="img/kage2.jpg" alt="kage" />
+        <button class="infoButton">Vis info</button>
+        <div class="infoBox">
+          <p>Dette er infoboksen for kage 2.</p>
+        </div>
+      </div>
+
+      <div class="kasse">
+        <img src="img/kage3.jpg" alt="kage" />
+        <button class="infoButton">Vis info</button>
+        <div class="infoBox">
+          <p>Dette er infoboksen for kage 3.</p>
+        </div>
+      </div>
+
+      <div class="kasse">
+        <img src="img/kage4.jpg" alt="kage" />
+        <button class="infoButton">Vis info</button>
+        <div class="infoBox">
+          <p>Dette er infoboksen for kage 4.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="udvalg-container2">
+      <div class="kasse">
+        <img src="img/kage5.jpg" alt="kage" />
+        <button class="infoButton">Vis info</button>
+        <div class="infoBox">
+          <p>Dette er infoboksen for kage 1.</p>
+        </div>
+      </div>
+
+      <div class="kasse">
+        <img src="img/kage6.jpg" alt="kage" />
+        <button class="infoButton">Vis info</button>
+        <div class="infoBox">
+          <p>Dette er infoboksen for kage 2.</p>
+        </div>
+      </div>
+
+      <div class="kasse">
+        <img src="img/kage7.jpg" alt="kage" />
+        <button class="infoButton">Vis info</button>
+        <div class="infoBox">
+          <p>Dette er infoboksen for kage 3.</p>
+        </div>
+      </div>
+
+      <div class="kasse">
+        <img src="img/kage8.jpg" alt="kage" />
+        <button class="infoButton">Vis info</button>
+        <div class="infoBox">
+          <p>Dette er infoboksen for kage 4.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="textbox3 reverse-layout">
+      <div class="textbox3-image">
+        <img src="img/kage10.jpg" alt="Kageværkets bagværk" />
+      </div>
+      <div class="textbox3-text">
+        <h1>Kærlighed til håndværket i hver eneste kage</h1>
+        <p>
+          Hos Kageværket kombinerer vi traditionelt håndværk med kreativ smag.
+          Hver kage bages fra bunden med omhu og de bedste råvarer, så du altid
+          får en oplevelse ud over det sædvanlige. Vi går aldrig på kompromis
+          med kvaliteten – kun kærlighed og passion når frem til dit bord.
+        </p>
+      </div>
+    </div>
+
+    <div class="textbox1">
+      <h1>Alt vores bagværk laves fra bunden med kærlighed</h1>
+    </div>
+
+    <footer class="site-footer">
+      <div class="footer-content">
+        <div class="footer-section logo">
+          <a href="index.html">
+            <img src="img/kage-logo.png" alt="Kagevaerket Logo" />
+          </a>
+        </div>
+
+        <div class="footer-section adresse">
+          <h3>Beliggenhed</h3>
+          <p>Kageværket</p>
+          <p>Flormelisgade 7</p>
+          <p>1150 København K</p>
+        </div>
+
+        <div class="footer-section contact">
+          <h3>Kontakt</h3>
+          <p>info@kagevaerket.dk</p>
+          <p>+45 28 33 44 55</p>
+        </div>
+
+        <div class="footer-section social">
+          <h3>Følg os her</h3>
+          <a href="#" class="fa fa-facebook"></a>
+          <a href="#" class="fa fa-instagram"></a>
+          <a href="#" class="fa fa-twitter"></a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- COPYRIGHT-BAR UNDER FOOTER -->
+
+    <div class="footer-bar">
+      <p>© 2026 Kageværket. Alle rettigheder forbeholdes.</p>
+    </div>
+
+    <script src="kage.js"></script>
+  </body>
+</html>

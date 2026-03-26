@@ -1,0 +1,972 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* VARIABLER */
+:root {
+  --color-primary: #7a584d;
+  --color-secondary: #d8c3a5;
+  --color-accent: #eaddd5;
+  --color-background: #fff9f6;
+  --color-text: #2b2b2b;
+
+  --font-logo: "Pacifico", cursive;
+  --font-body: "Poppins", sans-serif;
+
+  --transition: 0.3s;
+  --radius: 12px;
+}
+
+/* BODY */
+body {
+  font-family: var(--font-body);
+  padding: 20px;
+  background: var(--color-background);
+  color: var(--color-text);
+}
+
+/* TOP BAR */
+
+.top-bar {
+  width: 100%;
+  background-color: var(--color-primary);
+  color: white;
+  font-size: 0.85rem;
+  letter-spacing: 0.7px;
+
+  text-align: center;
+  padding: 6px 0;
+  margin-bottom: 2px;
+}
+
+/* HEADER */
+/* HEADER */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 150px;
+  padding: 0 25px;
+  background: var(--color-accent);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+header .logo img {
+  max-height: 200px;
+  width: auto; /* bevare proportioner */
+}
+
+/* TOPNAV - desktop-first */
+.topnav {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: bold;
+}
+
+.topnav a,
+.dropdown-btn {
+  display: inline-block;
+
+  padding: 10px 15px;
+  color: var(--color-primary);
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.topnav a.active {
+  border-bottom: 2px solid var(--color-primary) !important;
+}
+
+.topnav a:hover:not(.active) {
+  border-bottom: 2px solid var(--color-primary);
+}
+
+/* DROPDOWN - desktop */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-btn {
+  background: none;
+  border: none;
+  font-family: var(--font-body);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute; /* desktop */
+  top: 100%;
+  left: 0;
+  background-color: white;
+  border: 1px solid var(--color-secondary);
+  border-radius: var(--radius);
+  min-width: 180px;
+  z-index: 10;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 10px;
+  color: var(--color-text);
+}
+
+.dropdown-content a:hover {
+  background-color: var(--color-accent);
+  color: var(--color-text);
+}
+
+/* VIS DROPDOWN PÅ HOVER - desktop */
+@media screen and (min-width: 601px) {
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  .topnav .icon {
+    display: none; /* skjul burger */
+  }
+}
+
+/* BURGER */
+.topnav .icon {
+  display: none;
+  font-size: 1.8rem;
+  color: var(--color-primary);
+  cursor: pointer;
+  margin-left: auto; /* skubber burgeren helt til højre */
+}
+
+/* MOBIL */
+@media screen and (max-width: 600px) {
+  .topnav {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  .topnav a:not(.icon),
+  .dropdown-btn {
+    display: none; /* skjul links indtil burger */
+    width: 100%;
+    text-align: left;
+    padding: 10px 20px;
+    border-top: 1px solid var(--bg-soft);
+  }
+
+  .topnav .icon {
+    display: block; /* vis burger */
+    margin-left: auto; /* helt til højre */
+  }
+
+  /* når burger er aktiv */
+  .topnav.responsive a,
+  .topnav.responsive .dropdown-btn {
+    display: block;
+  }
+
+  .topnav.responsive .dropdown-content {
+    display: block;
+    position: relative; /* følger flow under burger-menu */
+    border: none;
+
+    padding-left: 10px;
+    border-left: 3px solid var(--color-primary);
+    background-color: white;
+  }
+
+  .topnav.responsive .dropdown-content a {
+    padding: 10px 20px;
+    color: var(--bg-dark);
+  }
+
+  .dropdown-btn {
+    width: 100%;
+    text-align: left;
+  }
+}
+
+/* HERO SECTION */
+.hero-wrapper {
+  position: relative;
+  width: 100%;
+  height: 90%;
+  overflow: hidden;
+}
+
+.hero-video {
+  width: 100%;
+  height: 90%;
+  object-fit: cover;
+  margin-top: 20px; /* lidt afstand til næste sektion */
+}
+
+.hero-text {
+  font-family: var(--font-logo);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: var(--color-accent); /* varm tone i stedet for hvid */
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6); /* beholder læsbarhed over video */
+}
+
+.line {
+  display: block;
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 1s ease,
+    transform 1s ease;
+}
+
+.line.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.cta-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 14px 30px;
+
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 500;
+
+  color: white;
+  background: var(--color-primary);
+
+  border-radius: var(--radius);
+  text-decoration: none;
+  border: 2px solid var(--color-accent);
+
+  transition: all var(--transition) ease;
+  box-shadow: 0 6px 18px rgba(122, 88, 77, 0.25);
+
+  position: relative;
+  overflow: hidden;
+}
+.cta-btn:hover {
+  background: var(--color-secondary);
+  color: var(--color-text);
+
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(122, 88, 77, 0.3);
+}
+.cta-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 12px rgba(122, 88, 77, 0.2);
+}
+
+.cta-btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: skewX(-25deg);
+  transition: 0.5s;
+}
+
+.cta-btn:hover::after {
+  left: 130%;
+}
+
+/* Tekstbokse */
+.textbox1,
+.textbox2,
+.textbox3 {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  box-sizing: border-box;
+
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: clamp(1.5rem, 5vw, 4rem);
+  transition: var(--transition);
+}
+
+/* Baggrunde */
+.textbox1 {
+  width: 100%;
+  height: 200px; /* fast højde */
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background: var(--color-primary); /* mørkebrun */
+  color: var(--color-accent); /* lys beige */
+  text-align: center;
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  line-height: 1.5;
+  position: relative;
+  z-index: 5; /* sikre visning */
+}
+.textbox1 h1 {
+  margin: 0;
+  color: var(--color-accent) !important; /* sikrer lys tekst */
+  font-size: 1.2rem;
+}
+
+.textbox2 {
+  background: var(--color-secondary);
+  color: var(--color-text);
+}
+
+.textbox3 {
+  background: var(--color-accent);
+  color: var(--color-primary);
+  display: flex; /* tekst og billede side om side */
+  overflow: hidden; /* holder alt indenfor kassen */
+}
+
+/* Tekst til venstre */
+.textbox3-left {
+  flex: 1;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.textbox3-left h1 {
+  font-family: var(--font-logo);
+  font-size: clamp(2rem, 3vw, 2.5rem);
+  margin-bottom: 20px;
+}
+
+.textbox3-left p {
+  font-family: var(--font-body);
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  line-height: 1.6;
+}
+
+/* Billede til højre */
+.textbox3-right {
+  flex: 1;
+}
+
+.textbox3-right img {
+  width: 100%; /* fylder kun højre halvdel */
+  height: 100%; /* fylder hele højre kolonne */
+  object-fit: cover; /* holder proportioner */
+  display: block;
+  margin: 0;
+}
+
+/* Behold alt generelt fra textbox3 */
+.textbox3.reverse-layout {
+  display: flex;
+  flex-direction: row; /* billede venstre, tekst højre */
+  overflow: hidden;
+  width: 100%;
+  height: 100vh;
+
+  box-sizing: border-box;
+
+  text-align: left;
+  color: var(--color-primary);
+  background: var(--color-accent);
+}
+
+/* Billedet til venstre */
+
+.textbox3-image img {
+  width: 100%; /* fylder hele containerens bredde */
+  height: 100%; /* fylder hele containerens højde */
+  object-fit: cover; /* holder proportioner uden at strække */
+  display: block;
+  border-radius: 0; /* ingen radius, fylder helt til kanten */
+}
+
+/* Teksten til højre */
+.textbox3-text {
+  flex: 1;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+}
+
+.textbox3-text h1 {
+  font-family: var(--font-logo);
+  font-size: clamp(2rem, 3vw, 2.5rem);
+  margin-bottom: 20px;
+}
+
+.textbox3-text p {
+  font-family: var(--font-body);
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  line-height: 1.6;
+}
+
+/* Responsivt stacked layout */
+@media (max-width: 768px) {
+  .textbox3.reverse-layout {
+    flex-direction: column;
+    height: auto;
+  }
+  .textbox3-text {
+    padding: 20px;
+    text-align: center;
+  }
+  .textbox3-image img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+/* Responsivt */
+@media (max-width: 768px) {
+  .textbox3 {
+    flex-direction: column;
+    height: auto;
+  }
+  .textbox3-left {
+    padding: 20px;
+    text-align: center;
+  }
+  .textbox3-right img {
+    width: 100%;
+    height: auto;
+  }
+}
+.slideshow-container {
+  max-width: 1000px;
+  margin: 20px auto;
+  position: relative;
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.slide {
+  display: none;
+  width: 100%;
+  position: relative;
+}
+
+.slide img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--radius);
+}
+
+.caption {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  font-size: 30px;
+  color: white;
+  padding: 8px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
+  transform: translateY(-50%);
+  user-select: none;
+}
+
+.prev {
+  left: 20px;
+}
+.next {
+  right: 20px;
+}
+
+.prev:hover,
+.next:hover {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+/* Forside - udvalg */
+
+.udvalg {
+  text-align: center;
+  color: var(--color-primary);
+  font-family: var(--font-body);
+  margin-top: 20px;
+}
+
+.udvalg-container {
+  display: flex;
+  justify-content: center;
+}
+
+.udvalg-container2 {
+  display: flex;
+  justify-content: center;
+}
+
+/* Kasser */
+.kasse {
+  background-color: white;
+  max-width: 300px;
+  max-height: 300px;
+  margin: 20px;
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  position: relative; /* vigtig for overlay */
+  transition: 0.5s;
+}
+
+/* Billede */
+.kasse img {
+  width: 200px;
+  height: 200px;
+  justify-content: center;
+}
+
+/* Hover effekt */
+.kasse:hover {
+  transform: scale(1.5);
+  z-index: 2;
+}
+
+/* (Beholdt hvis du bruger div inde i kasse) */
+.kasse div {
+  background: rgba(218, 195, 165, 0.95);
+  margin: 20px;
+  padding: 10px;
+}
+
+/* INFO BOX (overlay version – den rigtige) */
+
+.infoBox {
+  /* Behold alt funktionelt */
+  position: absolute;
+  inset: 0; /* fylder hele kassen */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  box-sizing: border-box;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 5;
+  pointer-events: none;
+
+  /* NYT DESIGN */
+  background: rgba(218, 195, 165, 0.95); /* lysere, varm farve */
+  color: var(--color-primary); /* tekstfarve */
+  font-family: var(--font-body);
+  font-size: 15px;
+  border-radius: var(--radius); /* bløde hjørner */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* blød skygge */
+}
+/* Når aktiv */
+.infoBox.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.infoButton {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  padding: 10px 18px;
+  border: none;
+  border-radius: var(--radius);
+
+  background-color: var(--color-primary);
+  color: white;
+  font-family: var(--font-body);
+  font-size: 14px;
+  cursor: pointer;
+
+  transition: var(--transition);
+  z-index: 6;
+
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.infoButton:hover {
+  background-color: var(--color-secondary);
+  color: var(--color-text);
+  transform: translate(-50%, -50%) scale(1.05);
+}
+
+/* DRINKS */
+.drink {
+  padding: 10px;
+  border-radius: 10px;
+  margin: 10px 0;
+  background: white;
+  cursor: pointer;
+}
+
+.soldout {
+  opacity: 0.5;
+}
+
+/* BUTTONS */
+button {
+  margin: 5px;
+}
+
+h1 {
+  color: var(--accent);
+}
+
+/* ==========================
+   FOOTER – KAGEVÆRKET
+   ========================== */
+.site-footer {
+  width: 100%;
+  background: var(--color-accent);
+  color: var(--color-primary);
+  padding: 20px 40px;
+  font-size: 0.85rem;
+  letter-spacing: 0.7px;
+  margin-top: 20px;
+}
+
+/* FOOTER CONTENT – FLEX MED 4 KOLONNER */
+.site-footer .footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/* GENERELLE FOOTER SEKTIONER */
+.site-footer .footer-section {
+  flex: 1 1 200px;
+  min-width: 150px;
+}
+
+/* LOGO – VENSTRE */
+.footer-section.logo {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.footer-section.logo img {
+  width: 120px;
+  height: auto;
+  display: block;
+}
+
+/* ADRESSE & KONTAKT – MIDTEN */
+.footer-section.adresse,
+.footer-section.contact {
+  text-align: center;
+}
+
+/* SOCIALE IKONER – HØJRE */
+.footer-section.social {
+  text-align: right;
+}
+
+/* OVERSKRIFTER OG TEKST */
+.site-footer h3 {
+  margin-bottom: 10px;
+}
+
+.site-footer p {
+  margin: 4px 0;
+}
+
+/* SOCIALE IKONER */
+.site-footer a.fa {
+  text-decoration: none;
+  color: #fff;
+  margin: 0 5px;
+  font-size: 1.2rem;
+  transition: color 0.3s;
+}
+
+.site-footer a.fa:hover {
+  color: var(--color-primary);
+}
+
+/* RESPONSIVE – MOBIL (1 KOLONNE) */
+@media screen and (max-width: 768px) {
+  .site-footer .footer-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+
+  .footer-section.logo,
+  .footer-section.adresse,
+  .footer-section.contact,
+  .footer-section.social {
+    text-align: center;
+  }
+}
+
+.footer-bar {
+  width: 100%;
+  background-color: var(--color-background);
+  text-align: center;
+
+  font-size: 0.9rem;
+  margin-top: 5px;
+
+  position: relative;
+  z-index: 2;
+}
+
+.card {
+  width: 250px;
+  padding: 20px;
+  background: #f4f4f4;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* Åbningstider - site */
+
+body {
+  font-family: var(--font-body);
+  background: #f5f5f5;
+  margin: 0;
+  padding: 40px;
+  color: #1f2937; /* mørk tekstfarve */
+}
+
+.opening-hours {
+  display: flex;
+  flex-direction: column; /* stak elementer lodret på mobil */
+  align-items: center; /* centrerer indhold horisontalt */
+  max-width: 800px;
+  margin: 20px auto; /* centrer sektionen på siden */
+  padding: 25px 30px;
+  background: var(--color-background);
+  border-radius: var(--radius);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: all var(--transition);
+  font-family: var(--font-body);
+}
+
+/* Sektion overskrift */
+.opening-hours h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 1.6rem;
+  color: var(--color-primary);
+  text-align: center;
+  font-family: var(--font-logo);
+}
+
+.status-box {
+  background: var(--color-accent);
+  border: 1px solid var(--color-secondary);
+  border-radius: var(--radius);
+  padding: 16px 24px;
+  margin-bottom: 20px;
+  width: fit-content;
+  text-align: center;
+  display: inline-block;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  transition: all var(--transition);
+}
+
+.status-label {
+  margin: 0 0 6px 0;
+  font-weight: bold;
+  font-size: 1rem;
+  color: var(--color-text);
+}
+
+.status-text {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: bold;
+  /* color: #1d4ed8; */
+}
+
+.hours-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+.day-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.day-row:last-child {
+  border-bottom: none;
+}
+
+.day {
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.time {
+  color: #555;
+}
+
+.closed-day .time {
+  color: #b91c1c;
+  font-weight: 600;
+}
+
+.today {
+  background: #f0fdf4;
+  border-radius: 8px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.open {
+  color: #15803d;
+}
+
+.closed {
+  color: #b91c1c;
+}
+
+.opening-hours img {
+  width: 300px; /* begræns billedets størrelse */
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-top: 20px; /* luft under status og liste på mobil */
+  justify-content: center;
+}
+
+/*Online bestilling*/
+
+body {
+  font-family: var(--font-body);
+  padding: 20px;
+  background: var(--color-background);
+  color: var(--color-text);
+  margin: 0;
+  margin-top: 20px;
+}
+
+/* STATUS */
+#status {
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+main {
+  background: var(--color-accent); /* lys baggrund for indhold */
+  padding: 30px;
+  border-radius: var(--radius);
+  max-width: 800px;
+  margin: 0 auto; /* centrer på siden */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all var(--transition);
+}
+
+main:hover {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* MENU ITEMS */
+#menu {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.cake {
+  background: var(--color-accent);
+  padding: 15px;
+  border-radius: var(--radius);
+  text-align: center;
+  cursor: pointer;
+
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.cake:hover {
+  background: var(--color-secondary);
+  transform: translateY(-3px);
+}
+
+.soldout {
+  opacity: 0.5;
+  cursor: not-allowed;
+  text-decoration: line-through;
+}
+
+/* SIZE & TOPPINGS */
+select,
+input[type="checkbox"] {
+  margin: 5px 0 15px 0;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+
+/* CART */
+#cart {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 15px;
+}
+
+#cart li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--color-accent);
+  padding: 10px;
+  border-radius: var(--radius);
+  margin-bottom: 8px;
+  background: var(--transition);
+}
+
+#cart li:hover {
+  background: var(--color-secondary);
+}
+
+#cart button {
+  background: var(--color-primary);
+  color: var(--color-background);
+  border: none;
+  border-radius: var(--radius);
+  padding: 4px 8px;
+  cursor: pointer;
+  background: var(--transition);
+}

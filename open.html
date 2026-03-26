@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="da">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Åbningstider - Kageværket</title>
+    <link rel="stylesheet" href="kage-style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <!-- TOP-BAR -->
+    <div class="top-bar">
+      Kageværket - Flormelisgade 7, 1150 Kbh K | info@kagevaerket.dk | +45 28 33
+      44 55
+    </div>
+
+    <!-- HEADER -->
+    <header class="site-header">
+      <div class="logo">
+        <a href="index.html"><img src="img/kage-logo.png" alt="logo" /></a>
+      </div>
+
+      <nav class="topnav" id="myTopnav">
+        <a href="index.html">Hjem</a>
+        <a href="online.html">Online Bestilling</a>
+        <a href="open.html" class="active">Åbningstider</a>
+        <a href="contact.html">Kontakt</a>
+
+        <div class="dropdown">
+          <button class="dropdown-btn">
+            Produkter <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content">
+            <a href="#">Bryllup</a>
+            <a href="#">Firma arrangement</a>
+            <a href="#">Fødselsdag</a>
+            <a href="#">Skræddersyet kage</a>
+            <a href="#">Gavekort</a>
+          </div>
+        </div>
+        <span class="icon" onclick="toggleNav()"
+          ><i class="fa fa-bars"></i
+        ></span>
+      </nav>
+    </header>
+
+    <section class="opening-hours">
+      <h2>Åbningstider</h2>
+
+      <div id="status" class="status-box">
+        <p class="status-label">Status:</p>
+        <p id="shopStatus" class="status-text"></p>
+      </div>
+
+      <ul class="hours-list">
+        <li class="day-row" data-day="1" data-open="09" data-close="16">
+          <span class="day">Mandag</span>
+          <span class="time">09:00 - 16:00</span>
+        </li>
+
+        <li class="day-row" data-day="2" data-open="09" data-close="16">
+          <span class="day">Tirsdag</span>
+          <span class="time">09:00 - 16:00</span>
+        </li>
+
+        <li class="day-row" data-day="3" data-open="09" data-close="16">
+          <span class="day">Onsdag</span>
+          <span class="time">09:00 - 16:00</span>
+        </li>
+
+        <li class="day-row" data-day="4" data-open="09" data-close="18">
+          <span class="day">Torsdag</span>
+          <span class="time">09:00 - 18:00</span>
+        </li>
+
+        <li class="day-row" data-day="5" data-open="09" data-close="16">
+          <span class="day">Fredag</span>
+          <span class="time">09:00 - 16:00</span>
+        </li>
+
+        <li class="day-row" data-day="6" data-open="10" data-close="14">
+          <span class="day">Lørdag</span>
+          <span class="time">10:00 - 14:00</span>
+        </li>
+
+        <li class="day-row closed-day" data-day="0">
+          <span class="day">Søndag</span>
+          <span class="time">Lukket</span>
+        </li>
+      </ul>
+      <img src="img/cakecontact.jpg" alt="" />
+    </section>
+
+    <footer class="site-footer">
+      <div class="footer-content">
+        <div class="footer-section logo">
+          <a href="index.html">
+            <img src="img/kage-logo.png" alt="Kageværket Logo" />
+          </a>
+        </div>
+
+        <div class="footer-section adresse">
+          <h3>Beliggenhed</h3>
+          <p>Kageværket</p>
+          <p>Flormelisgade 7</p>
+          <p>1150 København K</p>
+        </div>
+
+        <div class="footer-section contact">
+          <h3>Kontakt</h3>
+          <p>info@kagevaerket.dk</p>
+          <p>+45 28 33 44 55</p>
+        </div>
+
+        <div class="footer-section social">
+          <h3>Følg os her</h3>
+          <a href="#" class="fa fa-facebook"></a>
+          <a href="#" class="fa fa-instagram"></a>
+          <a href="#" class="fa fa-twitter"></a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- COPYRIGHT-BAR UNDER FOOTER -->
+
+    <div class="footer-bar">
+      <p>© 2026 Kageværket. Alle rettigheder forbeholdes.</p>
+    </div>
+
+    <script src="kage.js"></script>
+  </body>
+</html>
