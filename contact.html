@@ -2,7 +2,7 @@
 <html lang="da">
   <head>
     <meta charset="UTF-8" />
-    <title>Kagevaerket</title>
+    <title>Kontakt - Kagevaerket</title>
     <link rel="stylesheet" href="kage-style.css" />
     <link
       rel="stylesheet"
@@ -15,13 +15,11 @@
   </head>
 
   <body>
-    <!-- TOP-BAR -->
     <div class="top-bar">
       Kageværket - Flormelisgade 7, 1150 Kbh K | info@kagevaerket.dk | +45 28 33
       44 55
     </div>
 
-    <!-- HEADER -->
     <header class="site-header">
       <div class="logo">
         <a href="index.html"><img src="img/kage-logo.png" alt="logo" /></a>
@@ -50,38 +48,12 @@
         ></span>
       </nav>
     </header>
-
-
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-
-    <script>
-      (function () {
-        emailjs.init({
-          publicKey: "PMf8u4RvUNFLCEzrU",
-        });
-      })();
-
-      window.onload = function () {
-        document
-          .getElementById("contact-form")
-          .addEventListener("submit", function (event) {
-            event.preventDefault();
-
-            emailjs.sendForm("service_vj4748i", "template_ec2oifn", this).then(
-              function () {
-                alert("Besked sendt!");
-              },
-              function (error) {
-                alert("Fejl: " + error.text);
-                console.log("FAILED...", error);
-              },
-            );
-          });
-      };
-    </script>
   </head>
 
   <body>
+    <br>
+    <h1 class="form-title">Kontakt os allerede idag</h1>
+
     <form id="contact-form">
       <input type="hidden" name="time" value="Mar 10 2025 08:46" />
 
@@ -99,7 +71,49 @@
 
       <input type="submit" value="Send" />
     </form>
+  <div class="textbox1">
+      <h1>Alt vores bagværk laves fra bunden med kærlighed</h1>
+    </div>
+
+
+    <footer class="site-footer">
+      <div class="footer-content">
+        <div class="footer-section logo">
+          <a href="index.html">
+            <img src="img/kage-logo.png" alt="Kagevaerket Logo" />
+          </a>
+        </div>
+
+        <div class="footer-section adresse">
+          <h3>Beliggenhed</h3>
+          <p>Kageværket</p>
+          <p>Flormelisgade 7</p>
+          <p>1150 København K</p>
+        </div>
+
+        <div class="footer-section contact">
+          <h3>Kontakt</h3>
+          <p>info@kagevaerket.dk</p>
+          <p>+45 28 33 44 55</p>
+        </div>
+
+        <div class="footer-section social">
+          <h3>Følg os her</h3>
+          <a href="#" class="fa fa-facebook"></a>
+          <a href="#" class="fa fa-instagram"></a>
+          <a href="#" class="fa fa-twitter"></a>
+        </div>
+      </div>
+    </footer>
+
+
+    <div class="footer-bar">
+      <p>© 2026 Kageværket. Alle rettigheder forbeholdes.</p>
+    </div>
 
      <script src="kage.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
   </body>
 </html>
+
